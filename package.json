@@ -1,0 +1,39 @@
+{
+  "name": "fail-alarm",
+  "displayName": "Fail Alarm",
+  "description": "Plays a sound when a terminal command fails (non-zero exit code)",
+  "version": "0.1.0",
+  "publisher": "mufa",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "failAlarm.toggle",
+        "title": "Fail Alarm: Toggle On/Off"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "node-wav-player": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.2",
+    "@types/vscode": "^1.93.0",
+    "esbuild": "^0.27.3",
+    "typescript": "^5.9.3"
+  }
+}
